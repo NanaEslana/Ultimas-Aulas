@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimas Aulas</title>
+</head>
+<body>
+    <script>
+        /* Modularizar é divide o codigo empartes que represente uma
+        abstração funcional e reaprovetavel da aplicação */
+        //Ele organizar e reaproveitar.
+        //aplica em outras lingagem de programação
+        //padrão qual valor deve ser considerado na exportação
+        //nomeado quando precisamos que nosso modulo possa ser consumido em pedacos
+
+        //export para expor os valores
+
+//primeiro criar um arquivo em JS
+
+export const PI = 3.14;
+
+function comprimento(raio){
+    return 2 * PI * raio;
+}
+
+function area(raio){
+    return PI * (raio * raio);
+}
+
+export default comprimento //Exportação Padrão
+export {area,comprimento};//Exportação nomeada
+
+//em outra pagina criar outro arquivo em JS
+
+import comprimento from "./circuferencia";
+console.log(comprimento(2)); //Exportação padrão
+
+import {comprimento,area,PI} from "./circuferencia"
+console.log('Comprimento',comprimento(2));
+console.log('Area',area(2));
+console.log('PI',PI); //Exportação nomeada,quando coloco os meus parametros
+        
+    </script>
+</body>
+</html>
