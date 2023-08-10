@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcoes Geradoras</title>
+</head>
+<body>
+    <script>
+        //funções geradoras que podemos interroper e retorna sua exerculsão varias vezes.
+
+        // * rotula uma função moduladora.Ela pode ter sua função interropinda,na parte em que decidimos para.
+
+function * percorrelinha477(){
+    console.log('Passei pela rua 1');
+    yield 'Fim da Linha'
+}
+
+const linha = percorrelinha477();
+const parada = linha.next();
+console.log(parada); 
+
+"-----------------------------------------------"
+
+function * percorrelinha477(){
+    console.log('Passei pela rua 1');
+    yield 'Parada 1';
+    console.log('Passei pela rua 2');
+    yield 'Parada 2';
+    console.log('Passei pela rua 3');
+    yield 'Parada 3';
+    console.log('Passei pela rua 4');
+    yield 'Fim da Parada';
+}
+
+const linha = percorrelinha477();
+let next = linha.next(); console.log(next);
+next = linha.next(); console.log(next);
+next = linha.next(); console.log(next);
+next = linha.next(); console.log(next);
+next = linha.next(); console.log(next);
+
+
+/*  posso ultiliza esse também
+
+const linha = percorrelinha477();
+let next = linha.next(); 
+while(!next.done){
+    console.log(next);
+    next = linha.next();
+}
+console.log(next); 
+*/
+
+/* pode ultiliza o For - Of tbm 
+
+const linha = percorrelinha477();
+for(let parada of linha){
+    console.log(parada);
+}
+
+*/
+
+
+    </script>
+</body>
+</html>
